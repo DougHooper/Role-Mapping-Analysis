@@ -1,0 +1,16 @@
+To create a table in Excel that matches multiple 'a' values to a 'b' value and vice versa, you can use the "VLOOKUP" or "INDEX-MATCH" functions.
+
+Here's an example of how you could use the "VLOOKUP" function:
+
+Create a new sheet in your Excel workbook and name it "Table".
+In cell A1, type "a" as the header for the first column. In cell B1, type "b" as the header for the second column.
+In column A, list all the unique 'a' values. In column B, leave all the cells blank for now.
+On your original sheet, create a new column next to the 'b' column and use the "VLOOKUP" function to match the 'a' values with the corresponding 'b' values. For example, if your 'a' values are in column C and your 'b' values are in column D, you could use the following formula in cell E2:
+=VLOOKUP(C2,Table!$A$1:$B$50,2,FALSE)
+This formula will look up the value in cell C2 (the first 'a' value) in the "Table" sheet, and return the corresponding 'b' value from column B.
+Copy the formula down the column to match all 'a' values with the corresponding 'b' values.
+On the "Table" sheet, go to cell B2 and use the following formula to match the 'b' values with the corresponding 'a' values:
+=IFERROR(INDEX($A$2:$A$50,MATCH(B2,$B$2:$B$200,0)),"")
+This formula will look up the value in cell B2 (the first 'b' value) in the original sheet, and return the corresponding 'a' value from column A.
+Copy the formula down the column to match all 'b' values with the corresponding 'a' values.
+This should create a table in the "Table" sheet that maps all 'a' values to their corresponding 'b' values, and vice versa. You can use this table to create a pivot table or other analyses as needed.
