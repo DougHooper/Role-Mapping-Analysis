@@ -1,0 +1,18 @@
+
+You can use Excel's Power Query feature to create a table that matches multiple 'a' values to a 'b' value and vice versa. Here's how:
+
+Select the two columns of data, including the headers, and click the 'From Table/Range' button in the 'Data' tab.
+
+In the Power Query Editor, select the 'Transform' tab and click the 'Unpivot Columns' button. This will convert the two columns of data into three columns: 'a', 'Attribute', and 'Value'.
+
+Remove the 'Attribute' column by right-clicking on the column header and selecting 'Remove'.
+
+Group the data by the 'a' column by selecting the 'a' column and clicking the 'Group By' button in the 'Transform' tab. In the 'Group By' dialog box, select the 'b' column and set the 'Operation' to 'All Rows'. This will create a new column called 'All Rows' that contains a list of all the related 'b' values for each 'a' value.
+
+Expand the 'All Rows' column by clicking the expand icon in the column header. In the 'Expand' dialog box, select the 'b' column and click OK.
+
+Rename the 'All Rows.b' column to 'b' by right-clicking on the column header and selecting 'Rename'.
+
+Close and load the data into a new worksheet as a table by clicking the 'Close & Load' button in the 'Home' tab.
+
+This will create a table that matches multiple 'a' values to a 'b' value and vice versa, where the 'a' column is the parent field. You can then use this table to create a pivot table or other analyses.
